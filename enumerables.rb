@@ -1,4 +1,3 @@
-require 'pry'
 
 # this method returns an array of hashes, which we'll use in the other methods
 def spicy_foods 
@@ -39,7 +38,7 @@ end
 # for the spicy food whose cuisine matches the cuisine being passed to the method
   def get_spicy_food_by_cuisine(spicy_foods, cuisine)
   # your code here
-  spicy_foods.filter{ |food| food[:cuisine] == "#{cuisine}"}
+  spicy_foods.find{ |food| food[:cuisine] == "#{cuisine}"}
 end
 
 # Given an array of spicy foods, **return an array of hashes** 
@@ -53,7 +52,7 @@ end
 # the spicy foods that have a heat level greater than 5, in the following format: 
 # Buffalo Wings (American) | Heat Level: 🌶🌶🌶
 # HINT: Try to use methods you've already written to solve this!
-def print_spicy_foods(spicy_foods)
+def print_spiciest_foods(spicy_foods)
   spicy_foods.each do |food|
     if food[:heat_level] > 5
       heat_level_emoji = '🌶' * food[:heat_level]
